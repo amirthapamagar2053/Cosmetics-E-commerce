@@ -1,11 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const productRouter = require("./controllers/productRouter");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/products", productRouter);
+
 app.use(express.static("dist"));
 // sends index.html
 app.use("*", (req, res) => {
