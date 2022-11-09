@@ -12,7 +12,7 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      imagePath: {
+      image_path: {
         type: DataTypes.TEXT,
         defaultValue: "no_image",
         allowNull: false,

@@ -1,5 +1,5 @@
-const Product = require("./product");
 const User = require("./user");
+const Product = require("./product");
 const Order = require("./order");
 const Category = require("./category");
 const Brand = require("./brand");
@@ -23,4 +23,8 @@ OrderDetail.hasOne(Product);
 module.exports = {
   User,
   Order,
+  Product,
+  Category,
+  Brand,
+  OrderDetail,
 };
