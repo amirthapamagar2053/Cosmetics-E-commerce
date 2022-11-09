@@ -15,10 +15,10 @@ User.hasMany(Order);
 Order.belongsTo(User);
 
 Order.hasMany(OrderDetail);
-OrderDetail.hasOne(Order);
+OrderDetail.belongsTo(Order);
 
 Product.hasMany(OrderDetail);
-OrderDetail.hasOne(Product);
+OrderDetail.belongsTo(Product);
 
 module.exports = {
   User,
