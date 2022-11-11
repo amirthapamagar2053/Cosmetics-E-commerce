@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import NavBar from "./components/NavBar";
 import Router from "./components/Router";
 import { initializeProducts } from "./reducers/productReducer";
+import { setUser } from "./reducers/userReducer";
 
 const App = () => {
+  const user = JSON.parse(localStorage.getItem("loggedinUser"));
   const dispatch = useDispatch();
-  console.log("the app entered");
-
   useEffect(() => {
     dispatch(initializeProducts());
+    dispatch(setUser(user));
   }, [dispatch]);
   return (
     <>

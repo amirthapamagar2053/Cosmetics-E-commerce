@@ -7,4 +7,5 @@ const signupUser = async (newUser) => {
   return response.data;
 };
 
+
 export default { signupUser };
