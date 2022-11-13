@@ -1,8 +1,10 @@
 import axios from "axios";
 const baseurl = "http://localhost:3001/api/orderDetails";
 
-const addItemInCart = () => {
-  const response = axios.post(baseurl, product);
+const addItemInCart = async (productid) => {
+  console.log("the secvice add to cartr entered");
+  const response = await axios.post(`${baseurl}`, productid);
+  return response.data;
 };
 
-export default addItemInCart;
+export default { addItemInCart };

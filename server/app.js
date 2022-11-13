@@ -4,6 +4,7 @@ const path = require("path");
 const productRouter = require("./controllers/productRouter");
 const userRouter = require("./controllers/userRouter");
 const loginRouter = require("./controllers/loginRouter");
+const orderDetailRouter = require("./controllers/orderDetailsRouter");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
+app.use("/api/orderDetails", orderDetailRouter);
 
 app.use(express.static("dist"));
 // sends index.html
