@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import NavBar from "./components/NavBar";
 import Router from "./components/Router";
 import { initializeProducts } from "./reducers/productReducer";
@@ -10,7 +10,9 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(initializeProducts());
-    dispatch(setUser(user));
+    if (user.length !== 0) {
+      dispatch(setUser(user));
+    }
   }, [dispatch]);
   return (
     <>
