@@ -1,9 +1,9 @@
 const orderRouter = require("express").Router();
 const Order = require("../models/order");
 
-orderRouter.post("/", async (req, res) => {
-  const newOrder = Order.create(order);
-  res.json(newOrder);
+orderRouter.get("/", async (req, res) => {
+  const orders = await Order.findAll();
+  res.json(orders).status(200);
 });
 
 module.exports = orderRouter;

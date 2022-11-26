@@ -10,7 +10,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(initializeProducts());
-    if (user.length !== 0) {
+    if (user) {
       dispatch(setUser(user));
     }
   }, [dispatch]);
