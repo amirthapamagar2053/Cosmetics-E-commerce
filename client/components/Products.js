@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getCartItems } from "../reducers/cartitemReducer";
+import { addToCart } from "../reducers/cartitemReducer";
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
 
-  useEffect(() => {
-    dispatch(getCartItems());
-  }, []);
   // if (!products) {
   //   console.log("the if emtered is ", products);
 

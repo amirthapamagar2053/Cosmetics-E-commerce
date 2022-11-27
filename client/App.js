@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import NavBar from "./components/NavBar";
 import Router from "./components/Router";
+import { getCartItems } from "./reducers/cartitemReducer";
 import { initializeProducts } from "./reducers/productReducer";
 import { setUser } from "./reducers/userReducer";
 
@@ -12,6 +13,7 @@ const App = () => {
     dispatch(initializeProducts());
     if (user) {
       dispatch(setUser(user));
+      dispatch(getCartItems());
     }
   }, [dispatch]);
   return (
